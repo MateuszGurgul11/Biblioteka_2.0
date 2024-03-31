@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Biblioteczka</h1>
+        <ul>
+            {% for book in books %}
+                <li>{{ book.name }} by {{ book.authors|join(', ', 'name') }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/add_book">Dodaj ksiazke</a>
+    {% endblock %}
+</body>
+</html>
